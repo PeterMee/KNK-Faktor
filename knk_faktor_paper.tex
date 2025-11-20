@@ -63,11 +63,12 @@ $X \in \{N, A, K\}$ wird daher auf eine einheitliche Skala zwischen 0 und 1 norm
 \[
 \text{$X$’} = \frac{\text{$X$ - min($X$)}}{\text{max($X$ - min($X$)}}.
 \]
-Dies gewährleistet, dass keine Variable allein aufgrund ihrer Messskala unverhältnismäßig starken Einfluss auf das Modell ausübt.
-
-
-%\bigskip
-%TODO beispiel für normalisierung 
+Dies gewährleistet, dass keine Variable allein aufgrund ihrer Messskala unverhältnismäßig starken Einfluss auf das Modell ausübt. 
+Ergeben sich zum Beispiel für ein Vorhaben $X$ Aufwände in Stunden, sodass für 
+$A \in \{1, 6, 12, 48\}$ gilt, folgt daraus:
+$A = 1\ \text{Stunde} \rightarrow X' = 0$ und 
+$A = 48\ \text{Stunden} \rightarrow X' = 1$.
+Alle weiteren Werte verteilen sich proportional dazwischen.
 
 \subsection{Einführung von Gewichtungsfaktoren}
 Nicht jede Komponente trägt in jeder Entscheidung den gleichen Anteil zur Gesamteffizienz bei. Projektabhängig kann Nutzen wichtiger sein als Kopfweh, oder Belastung kann schwerer wiegen als objektiver Aufwand. Daher werden Gewichtungsfaktoren eingeführt:
