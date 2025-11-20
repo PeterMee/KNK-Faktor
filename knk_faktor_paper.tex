@@ -13,6 +13,7 @@
 \usepackage{csquotes}
 \usepackage{booktabs}
 
+
 % Page setup
 \geometry{margin=1in}
 \onehalfspacing
@@ -29,18 +30,36 @@
 
 \begin{abstract}
 In Entscheidungsprozessen, sowohl im beruflichen als auch im privaten Kontext, dominieren häufig rationale Abwägungen von Kosten und Nutzen. Es wird geschätzt, kalkuliert und optimiert – stets mit dem Ziel, die effizienteste Option zu identifizieren. Doch diese scheinbar objektive Betrachtung blendet einen entscheidenden Faktor aus: den subjektiv empfundenen Aufwand, der sich nicht in Zahlenwerken ausdrücken lässt. Viele Vorhaben verursachen unverhältnismäßig viel „Kopfweh“ – Stress, Frustration, Unsicherheit, mentale Belastung oder schlicht organisatorisches Chaos, das sich in klassischen Kosten-Nutzen-Modellen nicht wiederfindet, obwohl es maßgeblich bestimmt, wie sinnvoll, machbar oder nachhaltig ein Projekt tatsächlich ist.
+
 \bigskip
-Diese Lücke führt dazu, dass Entscheidungen oft systematisch verzerrt getroffen werden. Tätigkeiten, die theoretisch effizient erscheinen, entpuppen sich in der Praxis als hochgradig belastend, während scheinbar „teure“ Alternativen subjektiv deutlich leichter zu bewältigen sind. Um diese Diskrepanz abzubilden, wird in diesem Paper der Kosten-Nutzen-Kopfweh-Faktor (KNK-Faktor) eingeführt: ein Modell, das Nutzen, objektiven Aufwand und subjektive Belastung in einem einzigen, interpretierbaren Indikator zusammenführt.
+Diese Lücke führt dazu, dass Entscheidungen oft systematisch verzerrt getroffen werden. Tätigkeiten, die theoretisch effizient erscheinen, entpuppen sich in der Praxis als hochgradig belastend, während scheinbar „teure“ Alternativen subjektiv deutlich leichter zu bewältigen sind. Um diese Diskrepanz abzubilden, wird in diesem Paper der Kosten-Nutzen-Kopfweh-Faktor (KNK) eingeführt: ein Modell, das Nutzen, objektiven Aufwand und subjektive Belastung in einem einzigen, interpretierbaren Indikator zusammenführt.
+
 \bigskip
 Der KNK-Faktor soll es ermöglichen, Entscheidungen realitätsnäher zu bewerten, Stressoren explizit zu quantifizieren und damit eine Brücke zwischen ökonomischen Ansätzen und psychologischen Erkenntnissen über Belastung, kognitive Beanspruchung und Entscheidungsverhalten zu schlagen. Ziel dieses Papers ist es, den theoretischen Rahmen des KNK-Faktors zu entwickeln, eine praktikable Operationalisierung vorzuschlagen und potenzielle Anwendungsszenarien in Forschung und Praxis aufzuzeigen.
 
 \end{abstract}
 
+\section{Einleitung}
+Entscheidungen werden in der Praxis selten allein durch objektive Kalkulationen von Kosten und Nutzen bestimmt. Menschen berücksichtigen unausgesprochen eine Vielzahl zusätzlicher Faktoren - von mentaler Belastung über organisatorischen Aufwand bis hin zu emotionaler Reibung. Diese „subjektiven Kosten“ beeinflussen maßgeblich, ob eine Aufgabe als lohnend, anstrengend oder schlicht vermeidenswert wahrgenommen wird. Dennoch finden sie in klassischen Bewertungsmodellen kaum systematische Beachtung. Die Folge sind Verzerrungen in Entscheidungen: Projekte werden begonnen, obwohl sie übermäßig stressbelastet sind; triviale Aufgaben werden aufgeschoben, weil sie ein unverhältnismäßiges Gefühl von Aufwand erzeugen; und scheinbar rationale Kalkulationen scheitern, weil der mentale Preis nicht eingerechnet wurde.
 
+\bigskip
+Dieses Paper setzt genau an dieser Lücke an. Es schlägt einen integrierten Indikator vor, der objektiven Aufwand, erwarteten Nutzen und subjektive Belastung in einer gemeinsamen mathematischen Struktur zusammenführt: den KNK-Faktor. Ziel ist es, ein Modell zu entwickeln, das nicht nur ökonomische Rationalität abbildet, sondern auch jene psychologischen Einflussgrößen berücksichtigt, die in realen Entscheidungssituationen eine zentrale Rolle spielen.
 
-\newpage
+\bigskip
+Im Zentrum der Arbeit steht die mathematische Herleitung des Faktors. Dazu werden die beteiligten Variablen zunächst normalisiert, anschließend über gewichtete Beiträge integriert und schließlich zu einem Verhältnisindikator verdichtet. Die Herleitung soll zeigen, dass der KNK-Faktor trotz seiner Einfachheit ein konsistentes, interpretierbares und praxistaugliches Maß darstellt, um Aufgaben, Projekte oder Handlungsoptionen hinsichtlich ihres tatsächlichen Gesamtnutzens zu bewerten.
+
+\section{Konzeptioneller Rahmen}
+Der KNK-Faktor basiert auf drei zentralen Variablen: Aufwand ($A$), Belastung bzw. Kopfweh ($K$) und Nutzen ($N$). Jede dieser Größen beschreibt einen unterschiedlichen Aspekt der Entscheidungsrealität. Aufwand ($A$) umfasst alle objektiven Kosten einer Handlung, etwa benötigte Zeit, finanzielle Mittel oder organisatorische Ressourcen. Er kann je nach Kontext über konkrete Werte (z. B. Stunden, Euro) oder über eine numerische Ratingskala (z. B. 1-256) erfasst werden. Belastung ($K$) repräsentiert die subjektive, mentale oder emotionale Beanspruchung, die mit einer Aufgabe einhergeht. Da sie per definitionem nicht objektiv messbar ist, bietet sich eine standardisierte Selbsteinschätzungsskala an, beispielsweise von 0 („kein Stress“) bis 100 („maximale Belastung“). Nutzen ($N$) beschreibt den erwarteten positiven Output einer Handlung, etwa Effizienzsteigerung, Zeitgewinn oder qualitative Verbesserung, und kann ebenfalls auf einer numerischen Skala erhoben werden.
+
+\bigskip
+Da die drei Variablen unterschiedliche Herkunft, Einheiten und Skalenniveaus besitzen, ist eine Normalisierung zwingend erforderlich, um sie mathematisch vergleichbar zu machen. Die Normalisierung auf den Bereich $[0,1]$ ermöglicht es, Aufwand, Belastung und Nutzen in ein gemeinsames Bezugsrahmenwerk einzubetten, ohne dass einzelne Variablen aufgrund ihrer Skalenbreite das Modell dominieren. Zusätzlich werden Gewichte eingeführt, um unterschiedliche Kontextprioritäten abzubilden. So kann modelliert werden, dass in manchen Situationen der subjektive Stress relevanter ist als der objektive Aufwand, oder dass der erwartete Nutzen stärker gewichtet werden soll.
+
+\bigskip
+Für die Integration der Variablen wird eine einfache lineare Struktur verwendet. Diese Entscheidung folgt dem Ziel, ein Modell zu schaffen, das leicht interpretierbar, rechnerisch transparent und flexibel anpassbar bleibt. Die Linearität erlaubt es, Aufwand und Belastung als additive Komponenten eines wahrgenommenen Gesamtaufwands zu betrachten, während der Nutzen separat gegenübergestellt wird. Trotz der konzeptuellen Einfachheit zeigt sich, dass dieses Gerüst ausreichend ist, um typische Entscheidungsdilemmata realitätsnah abzubilden.
+Im folgenden Abschnitt wird die mathematische Herleitung des KNK-Faktors detailliert ausgearbeitet.
+
 \section{Mathematische Herleitung des KNK-Faktors}
-Klassische Kosten-Nutzen-Modelle bewerten Entscheidungen primär anhand des Verhältnisses zwischen erwarteten Erträgen und objektiven Kosten. Diese Modelle vernachlässigen jedoch Belastungsfaktoren wie Stress, kognitiver Beanspruchung oder emotionaler Frustration, die in der Praxis einen relevanten Einfluss auf die Durchführbarkeit und Sinnhaftigkeit eines Vorhabens ausüben. Um diese Lücke zu schließen, wird im Folgenden der Kosten-Nutzen-Kopfweh-Faktor (KNK) als erweiterter Effizienzindikator hergeleitet, der sowohl objektive als auch subjektive Belastungskomponenten integriert.
+Klassische Kosten-Nutzen-Modelle bewerten Entscheidungen primär anhand des Verhältnisses zwischen erwarteten Erträgen und objektiven Kosten. Diese Modelle vernachlässigen jedoch Belastungsfaktoren wie Stress, kognitiver Beanspruchung oder emotionaler Frustration, die in der Praxis einen relevanten Einfluss auf die Durchführbarkeit und Sinnhaftigkeit eines Vorhabens ausüben. Um diese Lücke zu schließen, wird im Folgenden der KNK-Faktor als erweiterter Effizienzindikator hergeleitet, der sowohl objektive als auch subjektive Belastungskomponenten integriert.
 
 \subsection{Erweiterung der Kostenkomponente um subjektive Belastungskomponente}
 Ausgangspunkt ist das klassische Kosten-Nutzen-Verhältnis:
@@ -64,10 +83,10 @@ $X \in \{N, A, K\}$ wird daher auf eine einheitliche Skala zwischen 0 und 1 norm
 \text{$X$’} = \frac{\text{$X$ - min($X$)}}{\text{max($X$ - min($X$)}}.
 \]
 Dies gewährleistet, dass keine Variable allein aufgrund ihrer Messskala unverhältnismäßig starken Einfluss auf das Modell ausübt. 
-Ergeben sich zum Beispiel für ein Vorhaben $X$ Aufwände in Stunden, sodass für 
+Ergeben sich zum Beispiel für ein Vorhaben Aufwände in Stunden, sodass für 
 $A \in \{1, 6, 12, 48\}$ gilt, folgt daraus:
-$A = 1\ \text{Stunde} \rightarrow X' = 0$ und 
-$A = 48\ \text{Stunden} \rightarrow X' = 1$.
+$A = 1\ \text{Stunde} \rightarrow A' = 0$ und 
+$A = 48\ \text{Stunden} \rightarrow A' = 1$.
 Alle weiteren Werte verteilen sich proportional dazwischen.
 
 \subsection{Einführung von Gewichtungsfaktoren}
@@ -75,70 +94,43 @@ Nicht jede Komponente trägt in jeder Entscheidung den gleichen Anteil zur Gesam
 
 \begin{itemize}
     \item $w_A \cdot A$ \; (Gewichtung $\times$ Aufwand)
-    \item $w_K \cdot K$ \; (Gewichtung $\times$ Kopfweh / subjektive Belastung)
+    \item $w_K \cdot K$ \; (Gewichtung $\times$ Kopfweh bzw. subjektive Belastung)
     \item $w_N \cdot N$ \; (Gewichtung $\times$ Nutzen)
 \end{itemize}
 Diese Gewichte ermöglichen die Anpassung des Modells an unterschiedliche Kontexte (z. B. Unternehmensentscheidungen, persönliche Lebensentscheidungen, medizinische Abläufe). 
 Die gewichtete Nutzenkomponente lautet somit $w_N N$', die gewichteten Gesamtkosten sind $w_A A$' + $w_K K$'.
 
 \subsection{Regularisierung zur Vermeidung von Division durch Null}
-Falls sowohl Aufwand als auch Kopfweh nach Normalisierung den Wert 0 annehmen, wäre der Nenner der Formel gleich null und die Division undefiniert. Darüber hinaus führt ein sehr kleiner Nenner zu extrem großen, empirisch instabilen KNK-Werten. Um diese Probleme zu umgehen, wird ein kleiner Regularisierungsterm 
-$\epsilon$ >0 addiert:
+Falls sowohl Aufwand als auch Kopfweh nach Normalisierung den Wert 0 annehmen, wäre der Nenner der Formel gleich null und die Division undefiniert. Darüber hinaus führt ein sehr kleiner Nenner zu extrem großen, empirisch instabilen KNK-Faktor. Um diese Probleme zu umgehen, wird ein kleiner Regularisierungsterm 
+$\epsilon$ > 0 addiert:
 \[
 C_{\text{eff}} = w_A\text{$A$'} + w_K\text{$K$'} + \epsilon.
 \]
 Typische Werte für $\epsilon$ liegen zwischen 0.01 und 0.1, abhängig vom Skalenniveau.
 
 \subsection{Definition des KNK-Faktors}
-Auf Basis der oben genannten Komponenten ergibt sich der Kosten-Nutzen-Kopfweh-Faktor (KNK) als:
+Auf Basis der oben genannten Komponenten ergibt sich der KNK als:
 \begin{center}
     \boxed{\text{KNK} = \frac{w_N\text{$N$'}}{w_A\text{$A$'} + w_K\text{$K$'} + \epsilon}}
 \end{center}
 Dieser Quotient repräsentiert den Nutzen pro Einheit effektiver Belastung.
-Ein hoher KNK-Wert zeigt an, dass ein Vorhaben einen vergleichsweise hohen Nutzen bei niedrigem Aufwand und geringer subjektiver Belastung bietet. Ein niedriger KNK-Wert hingegen signalisiert, dass Aufwand und Kopfweh im Verhältnis zum Nutzen überwiegen.
+Ein hoher KNK-Faktor zeigt an, dass ein Vorhaben einen vergleichsweise hohen Nutzen bei niedrigem Aufwand und geringer subjektiver Belastung bietet. Ein niedriger KNK-Faktor hingegen signalisiert, dass Aufwand und Kopfweh im Verhältnis zum Nutzen überwiegen.
+
+%\section{Beispielanwendung}
+
+\section{Diskussion und Limitationen}
+Der vorgeschlagene KNK-Faktor bietet einen strukturierten Ansatz, um Aufwand, subjektive Belastung und erwarteten Nutzen in einer einheitlichen Kennzahl zu vereinen. Ein zentraler Vorteil des Modells liegt in seiner Interpretierbarkeit: Die einzelnen Bestandteile sind klar definiert, die Normalisierung sorgt für Vergleichbarkeit und die einfache Struktur erlaubt eine transparente Berechnung. Dadurch eignet sich der KNK-Faktor sowohl für individuelle Entscheidungen als auch für Anwendungsszenarien im Projekt- und Arbeitskontext, in denen sowohl objektive als auch psychologische Faktoren berücksichtigt werden sollen. Besonders die explizite Einbeziehung der subjektiven Belastung stellt einen Mehrwert gegenüber klassischen Kosten-Nutzen-Modellen dar, da sie ein realistisches Abbild alltäglicher Entscheidungsprozesse ermöglicht.
+
+\bigskip
+Trotz dieser Vorteile bestehen mehrere Limitationen, die das Modell bewusst einfach halten, aber zugleich seinen Einsatzrahmen definieren. Erstens ist die Bewertung der Belastung ($K$) subjektiv und kontextabhängig. Unterschiede in persönlicher Einschätzung oder situativer Stimmung können die Ergebnisse verzerren. Zweitens setzt die gewählte Struktur voraus, dass Aufwand und Belastung proportional wirken. In der Realität können jedoch Schwellenwerte, Überlastungseffekte oder nichtlineare Stressreaktionen auftreten, die ein komplexeres Modell erfordern würden. Drittens beeinflusst die Wahl der Gewichte 
+$w_A$, $w_K$ und optional $w_N$ das Ergebnis stark: Sie bestimmen, welche Komponente dominiert, und müssen daher sorgfältig und kontextspezifisch festgelegt werden.
 
 
+\section{Schlussfolgerung}
+Dieses Paper hat den KNK-Faktor als kompakten Indikator vorgestellt, der objektiven Aufwand, subjektive Belastung und erwarteten Nutzen in einem gemeinsamen mathematischen Rahmen zusammenführt. Im Zentrum stand die Herleitung eines Modells, das durch Normalisierung, Gewichtung und eine transparente Verhältnisstruktur eine robuste und zugleich intuitiv interpretierbare Bewertung ermöglicht. Die Ergebnisse zeigen, dass selbst eine bewusst einfach gehaltene Struktur ausreicht, um zentrale Aspekte realer Entscheidungsprozesse abzubilden, insbesondere jene, in denen psychologische Faktoren eine entscheidende Rolle spielen.
 
-
-\newpage
-\[
-\text{KNK-Faktor} = \frac{\text{Nutzen}}{\text{Aufwand} + \text{Belastung}}
-\]
-
-Gewichtete Formel mit: \\
-$w_A \cdot A$ \; (Gewichtung $\times$ Aufwand) \\
-$w_K \cdot K$ \; (Gewichtung $\times$ Kopfweh / subjektive Belastung) \\
-$w_N \cdot N$ \; (Gewichtung $\times$ Nutzen) \\
-
-
-
-
-\[
-\text{KNK} = \frac{w_N \cdot N}{w_A \cdot A + w_K \cdot K}
-\]
-
-\newpage
-
-
-
-
-\section{Einleitung}
-Einführung in das Thema, Motivation, Problemstellung, Zielsetzung des Papers.
-
-\section{Verwandte Arbeiten}
-Übersicht über existierende Forschung, relevante Modelle oder theoretische Grundlagen.
-
-\section{Methodik}
-Beschreibe dein Modell, deine Herangehensweise, Datengrundlage oder theoretische Ableitungen.
-
-\section{Ergebnisse}
-Präsentiere deine wichtigsten Ergebnisse, Modelle, Berechnungen oder Visualisierungen.
-
-\section{Diskussion}
-Bewerte und interpretiere deine Ergebnisse. Was bedeuten sie? Wo liegen Grenzen?
-
-\section{Fazit}
-Schließe dein Paper ab: wichtigste Erkenntnisse, Ausblick, mögliche zukünftige Arbeiten.
+\bigskip
+Der KNK-Faktor liefert damit ein Werkzeug, das sowohl in der individuellen Entscheidungsfindung als auch im organisatorischen Kontext eingesetzt werden kann — etwa in der Projektplanung, Priorisierung oder Arbeitsgestaltung. Gleichzeitig eröffnet das Modell Raum für Erweiterungen, etwa durch nichtlineare Gewichtungen, dynamische Anpassungen oder empirische Validierungsstudien. Insgesamt leistet der KNK-Faktor einen Beitrag dazu, Entscheidungsprozesse realistischer abzubilden und die oft unterschätzte Rolle subjektiver Belastung mathematisch fassbar zu machen.
 
 \bibliographystyle{plain}
 \bibliography{references}
