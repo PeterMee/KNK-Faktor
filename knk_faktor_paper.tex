@@ -36,6 +36,69 @@ Der KNK-Faktor soll es ermöglichen, Entscheidungen realitätsnäher zu bewerten
 
 \end{abstract}
 
+
+
+\newpage
+\section{Mathematische Herleitung des KNK-Faktors}
+Klassische Kosten-Nutzen-Modelle bewerten Entscheidungen primär anhand des Verhältnisses zwischen erwarteten Erträgen und objektiven Kosten. Diese Modelle vernachlässigen jedoch Belastungsfaktoren wie Stress, kognitiver Beanspruchung oder emotionaler Frustration, die in der Praxis einen relevanten Einfluss auf die Durchführbarkeit und Sinnhaftigkeit eines Vorhabens ausüben. Um diese Lücke zu schließen, wird im Folgenden der Kosten-Nutzen-Kopfweh-Faktor (KNK) als erweiterter Effizienzindikator hergeleitet, der sowohl objektive als auch subjektive Belastungskomponenten integriert.
+
+\subsection{Erweiterung der Kostenkomponente um subjektive Belastungskomponente}
+Ausgangspunkt ist das klassische Kosten-Nutzen-Verhältnis:
+\[
+\text{$E$} = \frac{\text{$N$}}{\text{$C$}},
+\]
+wobei $N$ den erwarteten Nutzen und $C$ die Gesamtkosten repräsentiert.
+Im Kontext alltäglicher oder beruflicher Entscheidungen besteht der Kostenbegriff jedoch nicht allein aus quantifizierbarem Aufwand (z. B. Zeit, Geld, Ressourcen), sondern umfasst zusätzlich psychologische Belastungsfaktoren, die den realen Aufwand subjektiv erhöhen. Diese Belastungen werden im Modell als Kopfweh-Komponente 
+$K$ bezeichnet.
+Die Gesamtkosten eines Vorhabens lassen sich somit konzeptuell als additive Struktur modellieren:
+\[
+C_{\text{gesamt}} = \text{$A$} + \text{$K$},
+\]
+wobei $A$ den objektiven Aufwand darstellt und $K$ die subjektive Belastung repräsentiert.
+Die Additivität ist hier die naheliegendste und einfachste Annahme: Sowohl Aufwand als auch Belastung wirken unabhängige, kumulative Kostenbeiträge, die gemeinsam die „Gesamtbelastung“ einer Aufgabe definieren.
+
+\subsection{Normalisierung der Variablen}
+Da Aufwand, Nutzen und Kopfweh typischerweise auf unterschiedlichen Skalen vorliegen (z. B. Stunden, Euro, psychologische Ratings), ist eine Transformation notwendig, um die Variablen vergleichbar zu machen. Jede Variable 
+$X \in \{N, A, K\}$ wird daher auf eine einheitliche Skala zwischen 0 und 1 normalisiert:
+\[
+\text{$X$’} = \frac{\text{$X$ - min($X$)}}{\text{max($X$ - min($X$)}}.
+\]
+Dies gewährleistet, dass keine Variable allein aufgrund ihrer Messskala unverhältnismäßig starken Einfluss auf das Modell ausübt.
+
+
+%\bigskip
+%TODO beispiel für normalisierung 
+
+\subsection{Einführung von Gewichtungsfaktoren}
+Nicht jede Komponente trägt in jeder Entscheidung den gleichen Anteil zur Gesamteffizienz bei. Projektabhängig kann Nutzen wichtiger sein als Kopfweh, oder Belastung kann schwerer wiegen als objektiver Aufwand. Daher werden Gewichtungsfaktoren eingeführt:
+
+\begin{itemize}
+    \item $w_A \cdot A$ \; (Gewichtung $\times$ Aufwand)
+    \item $w_K \cdot K$ \; (Gewichtung $\times$ Kopfweh / subjektive Belastung)
+    \item $w_N \cdot N$ \; (Gewichtung $\times$ Nutzen)
+\end{itemize}
+Diese Gewichte ermöglichen die Anpassung des Modells an unterschiedliche Kontexte (z. B. Unternehmensentscheidungen, persönliche Lebensentscheidungen, medizinische Abläufe). 
+Die gewichtete Nutzenkomponente lautet somit $w_N N$', die gewichteten Gesamtkosten sind $w_A A$' + $w_K K$'.
+
+\subsection{Regularisierung zur Vermeidung von Division durch Null}
+Falls sowohl Aufwand als auch Kopfweh nach Normalisierung den Wert 0 annehmen, wäre der Nenner der Formel gleich null und die Division undefiniert. Darüber hinaus führt ein sehr kleiner Nenner zu extrem großen, empirisch instabilen KNK-Werten. Um diese Probleme zu umgehen, wird ein kleiner Regularisierungsterm 
+$\epsilon$ >0 addiert:
+\[
+C_{\text{eff}} = w_A\text{$A$'} + w_K\text{$K$'} + \epsilon.
+\]
+Typische Werte für $\epsilon$ liegen zwischen 0.01 und 0.1, abhängig vom Skalenniveau.
+
+\subsection{Definition des KNK-Faktors}
+Auf Basis der oben genannten Komponenten ergibt sich der Kosten-Nutzen-Kopfweh-Faktor (KNK) als:
+\begin{center}
+    \boxed{\text{KNK} = \frac{w_N\text{$N$'}}{w_A\text{$A$'} + w_K\text{$K$'} + \epsilon}}
+\end{center}
+Dieser Quotient repräsentiert den Nutzen pro Einheit effektiver Belastung.
+Ein hoher KNK-Wert zeigt an, dass ein Vorhaben einen vergleichsweise hohen Nutzen bei niedrigem Aufwand und geringer subjektiver Belastung bietet. Ein niedriger KNK-Wert hingegen signalisiert, dass Aufwand und Kopfweh im Verhältnis zum Nutzen überwiegen.
+
+
+
+
 \newpage
 \[
 \text{KNK-Faktor} = \frac{\text{Nutzen}}{\text{Aufwand} + \text{Belastung}}
@@ -47,11 +110,16 @@ $w_K \cdot K$ \; (Gewichtung $\times$ Kopfweh / subjektive Belastung) \\
 $w_N \cdot N$ \; (Gewichtung $\times$ Nutzen) \\
 
 
+
+
 \[
 \text{KNK} = \frac{w_N \cdot N}{w_A \cdot A + w_K \cdot K}
 \]
 
 \newpage
+
+
+
 
 \section{Einleitung}
 Einführung in das Thema, Motivation, Problemstellung, Zielsetzung des Papers.
