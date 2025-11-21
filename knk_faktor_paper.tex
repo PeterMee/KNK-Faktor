@@ -23,7 +23,8 @@
 \large Ein ganzheitliches Modell zur Bewertung von Aufwand, Nutzen und subjektiver Belastung}
 
 \author{Peter Meyer}
-\date{\today}
+%\date{\today}
+\date{November 20, 2025}
 
 \begin{document}
 \maketitle
@@ -80,7 +81,7 @@ Die Additivität ist hier die naheliegendste und einfachste Annahme: Sowohl Aufw
 Da Aufwand, Nutzen und Kopfweh typischerweise auf unterschiedlichen Skalen vorliegen (z. B. Stunden, Euro, psychologische Ratings), ist eine Transformation notwendig, um die Variablen vergleichbar zu machen. Jede Variable 
 $X \in \{N, A, K\}$ wird daher auf eine einheitliche Skala zwischen 0 und 1 normalisiert:
 \[
-\text{$X$’} = \frac{\text{$X$ - min($X$)}}{\text{max($X$ - min($X$)}}.
+\text{$X$’} = \frac{\text{$X$ - min($X$)}}{\text{max($X$) - min($X$)}}.
 \]
 Dies gewährleistet, dass keine Variable allein aufgrund ihrer Messskala unverhältnismäßig starken Einfluss auf das Modell ausübt. 
 Ergeben sich zum Beispiel für ein Vorhaben Aufwände in Stunden, sodass für 
